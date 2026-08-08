@@ -28,10 +28,19 @@ const title = `The Wedding of ${config.couple.brideShort} & ${config.couple.groo
 export const metadata: Metadata = {
   title,
   description: `Undangan pernikahan ${config.couple.brideShort} & ${config.couple.groomShort} — ${config.dayText}.`,
+  applicationName: `${config.couple.brideShort} & ${config.couple.groomShort}`,
+  category: "wedding invitation",
   openGraph: {
     title,
     description: `Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i pada acara pernikahan kami — ${config.dayText}.`,
     type: "website",
+    locale: "id_ID",
+    siteName: `${config.couple.brideShort} & ${config.couple.groomShort}`,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description: `Undangan pernikahan ${config.couple.brideShort} & ${config.couple.groomShort} — ${config.dayText}.`,
   },
 };
 

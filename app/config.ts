@@ -15,12 +15,12 @@ const shared = {
     groomShort: "Billy",
 
     bride: {
-      fullName: "Naufal", // ← GANTI dengan nama lengkap
+      fullName: "Naufal Noor Widad", // ← GANTI dengan nama lengkap
       instagram: "", // ← GANTI (username tanpa @). Kosongkan bila tidak ada.
     },
 
     groom: {
-      fullName: "Billy", // ← GANTI dengan nama lengkap
+      fullName: "Billy Yesnat", // ← GANTI dengan nama lengkap
       instagram: "", // ← GANTI (username tanpa @). Kosongkan bila tidak ada.
     },
   },
