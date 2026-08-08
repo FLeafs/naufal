@@ -24,8 +24,14 @@ const script = Parisienne({
 });
 
 const title = `The Wedding of ${config.couple.brideShort} & ${config.couple.groomShort}`;
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "http://localhost:3000");
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title,
   description: `Undangan pernikahan ${config.couple.brideShort} & ${config.couple.groomShort} — ${config.dayText}.`,
   applicationName: `${config.couple.brideShort} & ${config.couple.groomShort}`,
