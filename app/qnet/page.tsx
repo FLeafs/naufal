@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: `Undangan pernikahan ${cfg.couple.brideShort} & ${cfg.couple.groomShort} — ${cfg.dayText}, ${cfg.event.time}.`,
   openGraph: {
     title: `The Wedding of ${cfg.couple.brideShort} & ${cfg.couple.groomShort}`,
-    description: `Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i pada acara pernikahan kami — ${cfg.dayText}, ${cfg.event.time}.`,
+    description: `Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i pada acara pernikahan anak kami — ${cfg.dayText}, ${cfg.event.time}.`,
     type: "website",
     locale: "id_ID",
   },

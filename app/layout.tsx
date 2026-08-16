@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   category: "wedding invitation",
   openGraph: {
     title,
-    description: `Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i pada acara pernikahan kami — ${config.dayText}.`,
+    description: `Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i pada acara pernikahan anak kami — ${config.dayText}.`,
     type: "website",
     locale: "id_ID",
     siteName: `${config.couple.brideShort} & ${config.couple.groomShort}`,

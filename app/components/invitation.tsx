@@ -28,7 +28,7 @@ type InvitationProps = {
 /** Halaman undangan lengkap. Dipakai oleh mode public (/) dan qnet (/qnet). */
 export function Invitation({
   cfg,
-  coupleTitle = "Pernikahan Anak Kami",
+  coupleTitle = "Anak Kami",
   showParents = true,
 }: InvitationProps) {
   return (
@@ -185,7 +185,7 @@ function CoupleSection({
         <SectionTitle index="01" overline="Mempelai" title={title} align="left" />
         <p className="mt-6 max-w-md text-sm leading-relaxed text-sand/80">
           Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud
-          menyelenggarakan pernikahan kami:
+          menyelenggarakan pernikahan {showParents ? "anak kami" : "kami"}:
         </p>
       </Reveal>
 
