@@ -19,7 +19,7 @@ const shared = {
       instagram: "", // ? GANTI (username tanpa @). Kosongkan bila tidak ada.
       parents: {
         label: "Putri Pertama dari",
-        name: "Bpk. Wakhyudiono (Kepala Dusun) & Ibu Rasiyah",
+        name: "Bpk. Wakhyudiono & Ibu Rasiyah",
         origin: "Cilapar, Kaligondang, Purbalingga",
       },
     },

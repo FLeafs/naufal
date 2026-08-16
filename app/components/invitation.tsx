@@ -19,8 +19,18 @@ import {
 } from "./ornaments";
 import { Reveal } from "./reveal";
 
+type InvitationProps = {
+  cfg: InvitationConfig;
+  coupleTitle?: string;
+  showParents?: boolean;
+};
+
 /** Halaman undangan lengkap. Dipakai oleh mode public (/) dan qnet (/qnet). */
-export function Invitation({ cfg }: { cfg: InvitationConfig }) {
+export function Invitation({
+  cfg,
+  coupleTitle = "Pernikahan Anak Kami",
+  showParents = true,
+}: InvitationProps) {
   return (
     <InvitationGate cfg={cfg}>
       <ScrollProgress />
@@ -31,7 +41,11 @@ export function Invitation({ cfg }: { cfg: InvitationConfig }) {
 
         <SectionMarquee text="Bismillahirrahmanirrahim" />
 
-        <CoupleSection cfg={cfg} />
+        <CoupleSection
+          cfg={cfg}
+          title={coupleTitle}
+          showParents={showParents}
+        />
         <CountdownSection cfg={cfg} />
         <EventSection cfg={cfg} />
 
@@ -158,13 +172,17 @@ function QuoteSection({ cfg }: P) {
 }
 
 /* ============================ MEMPELAI ============================ */
-function CoupleSection({ cfg }: P) {
+function CoupleSection({
+  cfg,
+  title,
+  showParents,
+}: P & { title: string; showParents: boolean }) {
   return (
     <section className="relative overflow-hidden bg-coal px-7 py-24 sm:py-28">
       <FallingLeaves className="opacity-30" />
 
       <Reveal className="relative" variant="up">
-        <SectionTitle index="01" overline="Mempelai" title="Pernikahan Anak Kami" align="left" />
+        <SectionTitle index="01" overline="Mempelai" title={title} align="left" />
         <p className="mt-6 max-w-md text-sm leading-relaxed text-sand/80">
           Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud
           menyelenggarakan pernikahan kami:
@@ -174,7 +192,12 @@ function CoupleSection({ cfg }: P) {
       {/* Dua kartu dengan perataan berlawanan — kiri lalu kanan — supaya
           mata bergerak zig-zag, bukan lurus turun di tengah. */}
       <div className="relative mt-16 space-y-14">
-        <PersonCard person={cfg.couple.bride} name={cfg.couple.brideShort} side="left" />
+        <PersonCard
+          person={cfg.couple.bride}
+          name={cfg.couple.brideShort}
+          side="left"
+          showParents={showParents}
+        />
 
         <Reveal variant="scale" className="flex items-center justify-center gap-4">
           <span className="h-px w-16 bg-gradient-to-r from-transparent to-edge" />
@@ -182,7 +205,12 @@ function CoupleSection({ cfg }: P) {
           <span className="h-px w-16 bg-gradient-to-l from-transparent to-edge" />
         </Reveal>
 
-        <PersonCard person={cfg.couple.groom} name={cfg.couple.groomShort} side="right" />
+        <PersonCard
+          person={cfg.couple.groom}
+          name={cfg.couple.groomShort}
+          side="right"
+          showParents={showParents}
+        />
       </div>
     </section>
   );
@@ -192,10 +220,12 @@ function PersonCard({
   person,
   name,
   side,
+  showParents,
 }: {
   person: { fullName: string; instagram: string; parents: { label: string; name: string; origin: string } };
   name: string;
   side: "left" | "right";
+  showParents: boolean;
 }) {
   const isLeft = side === "left";
 
@@ -217,7 +247,7 @@ function PersonCard({
         {person.fullName || name}
       </h3>
 
-      {person.parents ? (<>
+      {showParents && person.parents ? (<>
         <p className="mt-3 text-[0.7rem] uppercase tracking-[0.2em] text-amber/80">
           {person.parents.label}
         </p>
