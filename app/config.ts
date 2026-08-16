@@ -16,12 +16,22 @@ const shared = {
 
     bride: {
       fullName: "Naufal Noor Widad", // ← GANTI dengan nama lengkap
-      instagram: "", // ← GANTI (username tanpa @). Kosongkan bila tidak ada.
+      instagram: "", // ? GANTI (username tanpa @). Kosongkan bila tidak ada.
+      parents: {
+        label: "Putri Pertama dari",
+        name: "Bpk. Wakhyudiono (Kepala Dusun) & Ibu Rasiyah",
+        origin: "Cilapar, Kaligondang, Purbalingga",
+      },
     },
 
     groom: {
       fullName: "Billy Yesnat", // ← GANTI dengan nama lengkap
-      instagram: "", // ← GANTI (username tanpa @). Kosongkan bila tidak ada.
+      instagram: "", // ? GANTI (username tanpa @). Kosongkan bila tidak ada.
+      parents: {
+        label: "Putra dari",
+        name: "Bpk. Frederick F. Yesnat (alm) & Ibu Sumarni",
+        origin: "Cirebon",
+      },
     },
   },
 

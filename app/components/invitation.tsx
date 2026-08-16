@@ -193,7 +193,7 @@ function PersonCard({
   name,
   side,
 }: {
-  person: { fullName: string; instagram: string };
+  person: { fullName: string; instagram: string; parents: { label: string; name: string; origin: string } };
   name: string;
   side: "left" | "right";
 }) {
@@ -216,6 +216,18 @@ function PersonCard({
       <h3 className="mt-5 font-script text-4xl leading-snug text-gilded sm:text-5xl">
         {person.fullName || name}
       </h3>
+
+      {person.parents ? (<>
+        <p className="mt-3 text-[0.7rem] uppercase tracking-[0.2em] text-amber/80">
+          {person.parents.label}
+        </p>
+        <p className="mt-1 text-sm leading-relaxed text-sand/80">
+          {person.parents.name}
+        </p>
+        <p className="mt-0.5 text-xs text-sand/60">
+          {person.parents.origin}
+        </p>
+      </>) : null}
 
       {person.instagram ? (
         <a
