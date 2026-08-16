@@ -164,7 +164,7 @@ function CoupleSection({ cfg }: P) {
       <FallingLeaves className="opacity-30" />
 
       <Reveal className="relative" variant="up">
-        <SectionTitle index="01" overline="Mempelai" title="The Couple" align="left" />
+        <SectionTitle index="01" overline="Mempelai" title="Pernikahan Anak Kami" align="left" />
         <p className="mt-6 max-w-md text-sm leading-relaxed text-sand/80">
           Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud
           menyelenggarakan pernikahan kami:
